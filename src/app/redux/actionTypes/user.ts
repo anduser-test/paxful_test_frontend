@@ -1,0 +1,3 @@
+export const USER_ACTIONS = {
+  CHANGE_USER_TYPE: 'CHANGE_USER_TYPE',
+};

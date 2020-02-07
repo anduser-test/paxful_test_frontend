@@ -51,6 +51,7 @@
     "quotemark": [true, "single", "jsx-double", "avoid-escape"],
     "jsx-boolean-value": false,
     "no-unused-variable": true,
-    "interface-name": [true, "never-prefix"]
+    "interface-name": [true, "never-prefix"],
+    "jsx-no-lambda": [false]
   }
 }

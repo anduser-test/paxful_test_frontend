@@ -1,0 +1,24 @@
+.chats {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+    box-shadow: 2px 0 5px 0px #888;
+    overflow-y: scroll;
+
+    @media (min-width: 320px) and (max-width: 1024px),
+      (min-height: 220px) and (max-height: 480px) and (orientation: landscape) {
+      display: none;
+    }
+
+    &__mobile {
+      display: none;
+
+      @media (min-width: 320px) and (max-width: 1024px),
+        (min-height: 220px) and (max-height: 480px) and (orientation: landscape) {
+        display: block;
+      }
+    }
+  }
+}

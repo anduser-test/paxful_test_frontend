@@ -1,0 +1,74 @@
+.chat {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: #f6f7fa;
+    padding-left: 60px;
+
+    @media (min-width: 320px) and (max-width: 1024px),
+      (min-height: 220px) and (max-height: 480px) and (orientation: landscape) {
+      width: 100%;
+      padding-left: 30px;
+    }
+  }
+
+  &-functional {
+    border-bottom: 1px solid #e0e0e0;
+    margin: 0 60px 5px 0;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+
+    @media (min-width: 320px) and (max-width: 1024px),
+      (min-height: 220px) and (max-height: 480px) and (orientation: landscape) {
+      margin: 0 30px 5px 0;
+      flex-direction: column-reverse;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    &-data {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      flex-direction: column;
+      line-height: 32px;
+      margin-left: -50px;
+
+      @media (min-width: 320px) and (max-width: 1024px),
+        (min-height: 220px) and (max-height: 480px) and (orientation: landscape) {
+        margin-left: 0;
+      }
+
+      &-pay-method {
+        font-size: 24px;
+        color: #616161;
+      }
+    }
+  }
+
+  &-messages {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding-right: 60px;
+
+    @media (min-width: 320px) and (max-width: 1024px),
+      (min-height: 220px) and (max-height: 480px) and (orientation: landscape) {
+      padding-right: 30px;
+    }
+  }
+
+  &-input-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 60px 20px 0;
+
+    @media (min-width: 320px) and (max-width: 1024px),
+      (min-height: 220px) and (max-height: 480px) and (orientation: landscape) {
+      margin: 0 30px 20px 0;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.chat-info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 49%;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  line-height: 32px;
+  color: #585858;
+  max-height: 100px;
+  text-align: center;
+
+  &-left {
+    border-right: 1px solid rgba(136, 136, 136, 0.2);
+    border-bottom: 1px solid rgba(136, 136, 136, 0.2);
+  }
+
+  &-right {
+    border-bottom: 1px solid rgba(136, 136, 136, 0.2);
+  }
+}
