@@ -4,7 +4,6 @@ import { RouteComponentProps } from 'react-router-dom';
 
 import { RootStore } from '@app/redux/combined';
 import { Chat } from '@app/components/Chat/Chat';
-import { getChat } from '@app/redux/selectors/chats';
 import { Chat as ChatType } from '@app/types/chats.types';
 import {
   setActiveChat,
@@ -30,7 +29,9 @@ interface MatchParams {
 }
 
 const mapStateToProps = (state: RootStore): MapStateToProps => ({
-  chat: getChat(state),
+  chat: state.chats.activeChat
+    ? state.chats.data.find((chat) => chat.id === state.chats?.activeChat)
+    : null,
   currentUserType: state.user.currentUser.role,
   bitcoinFloat: state.chats.bitcoinFloat,
 });
@@ -52,8 +53,8 @@ type Props = MapDispatchToProps &
 const ChatContainerConnected = (props: Props) => {
   React.useEffect(() => {
     props.setActiveChat(props.match.params.chatId);
-    props.markChatAsRead(props.match.params.chatId);
-  }, [props.match.params.chatId]);
+    props.markChatAsRead(props.match.params.chatId, props.currentUserType);
+  }, [props.match.params.chatId, props.currentUserType]);
 
   const differentUserRole = React.useMemo(
     () =>

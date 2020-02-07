@@ -2,11 +2,7 @@ import * as React from 'react';
 
 import './emptyPlaceholder.scss';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const EmptyPlaceholder = ({ children }: Props) => (
+const EmptyPlaceholder: React.FC = ({ children }) => (
   <div className="empty-placeholder">{children}</div>
 );
 

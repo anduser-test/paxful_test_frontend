@@ -1,3 +1,0 @@
-interface RefObject<T> {
-  readonly current: T | null;
-}

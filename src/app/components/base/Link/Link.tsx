@@ -5,11 +5,10 @@ import './link.scss';
 
 interface Props {
   to: string;
-  children: React.ReactNode;
   onClick?: () => void;
 }
 
-const Link = ({ to, children, onClick }: Props) => (
+const Link: React.FC<Props> = ({ to, children, onClick }) => (
   <NavLink to={to} className="paxful-link" onClick={onClick}>
     {children}
   </NavLink>

@@ -1,5 +1,5 @@
 import { axiosAPI } from '@app/config';
-import { AppRoutesPaths } from '@app/routes/app-routes-paths';
+import { AppRoutesPaths } from '@app/constants/routes/appRoutes.constants';
 
 export class ChatsApi {
   getBitcoinData() {

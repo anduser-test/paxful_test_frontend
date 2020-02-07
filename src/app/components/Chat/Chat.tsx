@@ -47,10 +47,9 @@ const Chat = ({ chat, deleteChat }: Props) => {
       </div>
 
       <div className="chat-messages">
-        {chat.messages &&
-          chat.messages.map((message, index) => (
-            <Message message={message} key={index} user={chat.user} />
-          ))}
+        {chat.messages?.map((message, index) => (
+          <Message message={message} key={index} user={chat.user} />
+        ))}
         <span ref={messagesEndRef} />
       </div>
 

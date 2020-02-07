@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { randomizer } from '@app/utils/chat.helpers';
 
+// TODO only for demonstration of HOC's
 export const withPolling = (pollingAction: any) => (
   Component: React.ComponentType,
 ) => {
@@ -12,7 +13,9 @@ export const withPolling = (pollingAction: any) => (
       setTimeout(poolData, randomizer(10000, 30000));
     }, []);
 
-    poolData();
+    React.useEffect(() => {
+      poolData();
+    }, []);
 
     return <Component {...props} />;
   };

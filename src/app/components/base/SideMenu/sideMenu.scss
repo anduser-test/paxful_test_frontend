@@ -1,3 +1,5 @@
+@import '../../../shared-styles/colors.scss';
+
 .left-menu {
   .bm-burger-button {
     position: fixed;
@@ -8,7 +10,7 @@
   }
 
   .bm-burger-bars {
-    background: #373a47;
+    background: $dark-gray;
   }
 
   .bm-cross-button {
@@ -19,7 +21,7 @@
   }
 
   .bm-menu {
-    background: #fbfbfb;
+    background: $white;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
 
@@ -30,7 +32,7 @@
   }
 
   .bm-morph-shape {
-    fill: #373a47;
+    fill: $dark-gray;
   }
 
   .bm-overlay {
@@ -49,7 +51,7 @@
   }
 
   .bm-burger-bars {
-    background: #373a47;
+    background: $dark-gray;
   }
 
   .bm-cross {
@@ -62,7 +64,7 @@
   }
 
   .bm-menu {
-    background: #fbfbfb;
+    background: $white;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
     padding-bottom: 20px;
@@ -80,7 +82,7 @@
   }
 
   .bm-morph-shape {
-    fill: #373a47;
+    fill: $dark-gray;
   }
 
   .bm-overlay {

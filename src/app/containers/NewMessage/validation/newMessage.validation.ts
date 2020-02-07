@@ -9,7 +9,7 @@ interface MessageData {
 export const validate = (
   values: Partial<MessageData>,
 ): FormErrors<MessageData, string> => {
-  const errors: Partial<{ [key: string]: string }> = {};
+  const errors: Record<string, string> = {};
 
   if (!values.text || (values.text && !values.text.trim())) {
     errors.text = FIELD_ERRORS.REQUIRED;

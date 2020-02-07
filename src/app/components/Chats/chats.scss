@@ -1,10 +1,12 @@
+@import '../../shared-styles/colors.scss';
+
 .chats {
   &-container {
     display: flex;
     flex-direction: column;
     width: 25%;
     height: 100%;
-    box-shadow: 2px 0 5px 0px #888;
+    box-shadow: 2px 0 5px 0px $gray;
     overflow-y: scroll;
 
     @media (min-width: 320px) and (max-width: 1024px),

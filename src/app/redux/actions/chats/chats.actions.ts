@@ -31,9 +31,9 @@ export const sendMessage = (chatId: string, message: string, role: string) => ({
   },
 });
 
-export const markChatAsRead = (chatId: string) => ({
+export const markChatAsRead = (chatId: string, role: string) => ({
   type: CHATS_ACTIONS.MARK_AS_READ,
-  payload: chatId,
+  payload: { chatId, role },
 });
 
 export const markAsPaid = (chatId: string) => ({

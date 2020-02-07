@@ -35,6 +35,7 @@ export const chats = createReducer(initialState, {
           ...chat.messages,
           { text: payload.message, from: payload.role },
         ];
+        chat.newMessagesFrom = { ...chat.newMessagesFrom, from: payload.role };
       }
       return { ...chat };
     }),
@@ -42,15 +43,19 @@ export const chats = createReducer(initialState, {
 
   [CHATS_ACTIONS.MARK_AS_READ]: (
     state: ChatsState,
-    chatId: string,
+    payload: { chatId: string; role: string },
   ): ChatsState => ({
     ...state,
     data: state.data.map((chat) => {
-      if (chat.id === chatId) {
-        chat.isNewMessages = false;
+      if (chat.id === payload.chatId) {
+        if (payload.role !== chat.newMessagesFrom?.from) {
+          return { ...chat, isNewMessages: false, newMessagesFrom: null };
+        }
+
+        return { ...chat, isNewMessages: false };
       }
 
-      return { ...chat };
+      return chat;
     }),
   }),
 

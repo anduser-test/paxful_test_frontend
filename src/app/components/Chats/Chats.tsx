@@ -16,7 +16,7 @@ interface Props {
   currentUser: User;
   activeChat: string;
   bitcoinFloat: number;
-  markChatAsRead: (chatId: string) => void;
+  markChatAsRead: (chatId: string, role: string) => void;
 }
 
 const Chats = ({
@@ -28,12 +28,12 @@ const Chats = ({
 }: Props) => (
   <>
     <div className="chats-container">
-      {chats && chats.length ? (
+      {chats?.length ? (
         chats.map((chat) => (
           <Link
             to={`${chat.id}`}
             key={chat.id}
-            onClick={() => markChatAsRead(chat.id)}
+            onClick={() => markChatAsRead(chat.id, currentUser.role)}
           >
             <ChatPreview
               chat={chat}
@@ -75,7 +75,7 @@ const Chats = ({
                     to={`${chat.id}`}
                     key={chat.id}
                     onClick={() => {
-                      markChatAsRead(chat.id);
+                      markChatAsRead(chat.id, currentUser.role);
                       params.setNegativeStatus();
                     }}
                   >

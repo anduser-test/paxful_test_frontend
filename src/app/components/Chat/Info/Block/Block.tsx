@@ -3,11 +3,10 @@ import * as React from 'react';
 import './block.scss';
 
 interface Props {
-  children: React.ReactNode;
   side: 'left' | 'right';
 }
 
-const Block = ({ children, side }: Props) => (
+const Block: React.FC<Props> = ({ children, side }) => (
   <div className={`chat-info-block chat-info-block-${side}`}>{children}</div>
 );
 

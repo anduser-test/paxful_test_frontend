@@ -20,8 +20,12 @@ const ChatPreview = ({ chat, currentUser, isActive, bitcoinFloat }: Props) => (
     <div className="chat-preview-info">
       <span className="chat-preview-info-status">
         <span
-          className={`chat-preview-indicator ${chat.isNewMessages &&
-            'chat-preview-indicator__unread'}`}
+          className={cn('chat-preview-indicator', {
+            'chat-preview-indicator__unread':
+              chat.isNewMessages ||
+              (chat.newMessagesFrom &&
+                chat.newMessagesFrom.from !== currentUser.role),
+          })}
         />{' '}
         {chat.user.nickName} is buying
       </span>

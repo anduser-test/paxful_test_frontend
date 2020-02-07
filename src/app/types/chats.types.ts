@@ -14,6 +14,9 @@ export interface Chat {
   status: number;
   messages?: Message[];
   isNewMessages: boolean;
+  newMessagesFrom?: {
+    from: string;
+  };
 }
 
 export interface Message {

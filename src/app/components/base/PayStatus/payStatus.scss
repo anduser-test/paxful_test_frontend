@@ -1,11 +1,13 @@
+@import '../../../shared-styles/colors.scss';
+
 .payment-status {
   font-size: 14px;
 
   &__paid {
-    color: #7cc295;
+    color: $light-green;
   }
 
   &__not-paid {
-    color: #b5b5b5;
+    color: $gray;
   }
 }
